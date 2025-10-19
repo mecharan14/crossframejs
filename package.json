@@ -1,0 +1,48 @@
+{
+  "name": "crossframejs",
+  "version": "1.0.0",
+  "description": "A lightweight, type-safe, extensible library for secure iframe communication using postMessage — with channels, plugins, and handshake support.",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "lint": "eslint . --ext .ts",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "iframe",
+    "postmessage",
+    "communication",
+    "cross-window",
+    "messaging",
+    "plugin-system",
+    "typescript",
+    "secure",
+    "crossframejs"
+  ],
+  "author": "mecharan14",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mecharan14/crossframejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mecharan14/crossframejs/issues"
+  },
+  "homepage": "https://github.com/mecharan14/crossframejs#readme",
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "eslint": "^9.38.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.10"
+  }
+}

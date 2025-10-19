@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Parent Frame</h2>
+        <iframe id="child" src="./child.html"></iframe>
+
+        <script type="module">
+            import { CrossFrame } from "../src/index.ts";
+
+            const iframe = document.getElementById("child");
+            const comm = new CrossFrame(iframe.contentWindow, {
+                origin: "*",
+                handshakeToken: "secret123",
+                // debug: true,
+            });
+            
+            comm.on("ready", async () => {
+                console.log("Child is ready");
+            });
+
+            await comm.handshake();
+            comm.request("getUser", { id: 1 }).then(console.log);
+
+            
+            const uiChannel = comm.channel("ui");
+            uiChannel.send("showAlert", { message: "Hello from Parent Frame!" });
+        </script>
+    </body>
+</html>

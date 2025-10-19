@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Child Frame</h2>
+
+        <script type="module">
+            import { CrossFrame } from "../src/index.ts";
+            const comm = new CrossFrame(window.parent, {
+                origin: "*",
+                handshakeToken: "secret123",
+                // debug: true,
+            });
+
+            comm.on("getUser", ({ id }) => {
+                return { id, name: "John Doe" };
+            });
+
+            comm.send("ready");
+            const uiChannel = comm.channel("ui");
+            uiChannel.on("showAlert", ({ message }) => {
+                // alert(message);
+            });
+        </script>
+    </body>
+</html>
