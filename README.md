@@ -165,11 +165,6 @@ function Dashboard() {
   return <button onClick={() => send('ready')}>Notify Parent</button>;
 }
 ```
----
-
-## Playground Demo
-Try the online demo (parent ↔ iframe communication):
-[https://crossframejs-demo.vercel.app/](to be deployed)
 
 ---
 
