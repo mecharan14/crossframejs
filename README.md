@@ -40,11 +40,11 @@ yarn add crossframejs
 ### Parent Page
 
 ```typescript
-import { createCrossFrame } from 'crossframejs';
+import { CrossFrame } from 'crossframejs';
 
 const iframe = document.getElementById('child') as HTMLIFrameElement;
 
-const parent = createCrossFrame(iframe.contentWindow!, {
+const parent = new CrossFrame(iframe.contentWindow!, {
   origin: 'https://child-app.com',
   handshakeToken: 'secret123', // optional handshake
 });
@@ -64,9 +64,9 @@ console.log('Got user:', user);
 ### Child Page
 
 ```typescript
-import { connectCrossFrame } from 'crossframejs';
+import { CrossFrame } from 'crossframejs';
 
-const child = connectCrossFrame(window.parent, {
+const child = new CrossFrame(window.parent, {
   origin: 'https://parent-app.com',
   handshakeToken: 'secret123', // optional handshake
 });
