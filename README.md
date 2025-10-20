@@ -4,7 +4,7 @@
 
 [![npm version](https://img.shields.io/npm/v/crossframejs.svg)](https://www.npmjs.com/package/crossframejs)
 [![license](https://img.shields.io/npm/l/crossframejs)](LICENSE)
-![bundle size](https://img.shields.io/bundlephobia/minzip/crossframejs)
+![monthly downloads](https://img.shields.io/npm/dm/crossframejs.svg)
 
 ---
 
@@ -148,22 +148,6 @@ export class LoggerPlugin implements CrossFramePlugin {
 const comm = new CrossFrame(iframe.contentWindow, '*');
 comm.use(new LoggerPlugin());
 
-```
----
-
-## React Example
-```tsx
-import { useCrossFrame } from 'crossframejs/react';
-
-function Dashboard() {
-  const { send, on } = useCrossFrame();
-
-  useEffect(() => {
-    on('updateTheme', (theme) => setTheme(theme));
-  }, []);
-
-  return <button onClick={() => send('ready')}>Notify Parent</button>;
-}
 ```
 
 ---

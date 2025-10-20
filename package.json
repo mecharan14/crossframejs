@@ -1,6 +1,6 @@
 {
   "name": "crossframejs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight, type-safe, extensible library for secure iframe communication using postMessage — with channels, plugins, and handshake support.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
